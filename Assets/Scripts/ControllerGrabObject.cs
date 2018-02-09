@@ -32,49 +32,49 @@ public class ControllerGrabObject : MonoBehaviour
         menu = leftController.GetComponent<Menu>();
     }
 
-    void Update ()
-    {
-        if(collidingUI && collidingUI.tag =="Button")
-        {
-            collidingUI.GetComponent<Renderer>().material.color = Color.red;
-            if(Controller.GetHairTriggerDown())
-            {
-                if (collidingUI.name == "LocomotionButton")
-                {
-                    menu.LocomotionMenuToggle();
-                }
-                if (collidingUI.name == "TeleportButton")
-                {
-                    locomotionSetting = 0;
-                    menu.LocomotionMenuToggle();
-                }
-                if(collidingUI.name == "BlinkButton")
-                {
-                    locomotionSetting = 1;
-                    menu.LocomotionMenuToggle();
-                }
-                if(collidingUI.name == "SlideButton")
-                {
-                    locomotionSetting = 2;
-                    menu.LocomotionMenuToggle();
-                }
-                if (collidingUI.name == "CAOTSButton")
-                {
-                    locomotionSetting = 3;
-                    menu.LocomotionMenuToggle();
-                }
-                if(collidingUI.name == "GrabWorldButton")
-                {
-                    locomotionSetting = 4;
-                    menu.LocomotionMenuToggle();
-                }
-                if (collidingUI.name == "ExitButton")
-                {
-                    menu.LocomotionMenuToggle();
-                }
-            }
-        }
-        else if(lastUITouched && lastUITouched.tag == "Button")
+    void Update()
+    {  
+        //if(collidingUI && collidingUI.tag =="Button")
+        //{
+        //    collidingUI.GetComponent<Renderer>().material.color = Color.red;
+        //    if(Controller.GetHairTriggerDown())
+        //    {
+        //        if (collidingUI.name == "LocomotionButton")
+        //        {
+        //            menu.LocomotionMenuToggle();
+        //        }
+        //        if (collidingUI.name == "TeleportButton")
+        //        {
+        //            locomotionSetting = 0;
+        //            menu.LocomotionMenuToggle();
+        //        }
+        //        if(collidingUI.name == "BlinkButton")
+        //        {
+        //            locomotionSetting = 1;
+        //            menu.LocomotionMenuToggle();
+        //        }
+        //        if(collidingUI.name == "SlideButton")
+        //        {
+        //            locomotionSetting = 2;
+        //            menu.LocomotionMenuToggle();
+        //        }
+        //        if (collidingUI.name == "CAOTSButton")
+        //        {
+        //            locomotionSetting = 3;
+        //            menu.LocomotionMenuToggle();
+        //        }
+        //        if(collidingUI.name == "GrabWorldButton")
+        //        {
+        //            locomotionSetting = 4;
+        //            menu.LocomotionMenuToggle();
+        //        }
+        //        if (collidingUI.name == "ExitButton")
+        //        {
+        //            menu.LocomotionMenuToggle();
+        //        }
+        //    }
+        //}
+        if (lastUITouched && lastUITouched.tag == "Button")
         {
             lastUITouched.GetComponent<Renderer>().material.color = Color.blue;
             lastUITouched = null;
