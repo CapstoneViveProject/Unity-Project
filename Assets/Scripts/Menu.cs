@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Menu : MonoBehaviour
 
     public GameObject userMenu;
     public GameObject locomotionMenu;
+    public GameObject levelMenu;
 
     public bool userMenuActive = false;
     public bool locomotionMenuActive = false;
@@ -33,7 +35,8 @@ public class Menu : MonoBehaviour
         trackedObj = GetComponent<SteamVR_TrackedObject>();
         userMenu.SetActive(false);
         locomotionMenu.SetActive(false);
-
+        levelMenu.SetActive(false);
+        locomotionMenu.SetActive(false);
     }
     void Start()
     {
@@ -53,6 +56,8 @@ public class Menu : MonoBehaviour
             else
             {
                 userMenu.SetActive(false);
+                locomotionMenu.SetActive(false);
+                levelMenu.SetActive(false);
                 userMenuActive = false;
             }
         }
@@ -61,22 +66,32 @@ public class Menu : MonoBehaviour
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
     }
-    public void LocomotionMenuToggle()
+    //public void LocomotionMenuToggle()
+    //{
+    //    if (!locomotionMenuActive)
+    //    {
+    //        locomotionMenu.SetActive(true);
+    //        locomotionMenuActive = true;
+    //        userMenu.SetActive(false);
+    //        userMenuActive = false;
+    //    }
+    //    else
+    //    {
+    //        locomotionMenu.SetActive(false);
+    //        locomotionMenuActive = false;
+    //        userMenu.SetActive(true);
+    //        userMenuActive = true;
+    //    }
+    //}
+    public void onLocomotionPress()
     {
-        if (!locomotionMenuActive)
-        {
-            locomotionMenu.SetActive(true);
-            locomotionMenuActive = true;
-            userMenu.SetActive(false);
-            userMenuActive = false;
-        }
-        else
-        {
-            locomotionMenu.SetActive(false);
-            locomotionMenuActive = false;
-            userMenu.SetActive(true);
-            userMenuActive = true;
-        }
+        userMenu.SetActive(false);
+        locomotionMenu.SetActive(true);
+    }
+    public void onLevelSelectPress()
+    {
+        userMenu.SetActive(false);
+        levelMenu.SetActive(true);
     }
     public void onTeleportPress()
     {
@@ -104,8 +119,26 @@ public class Menu : MonoBehaviour
         cGOL.locomotionSetting = 2;
         cGOR.locomotionSetting = 2;
     }
-    public void onExitPress()
+    public void onLocoExitPress()
     {
-
+        userMenu.SetActive(true);
+        locomotionMenu.SetActive(false);
+    }
+    public void onXRoomPress()
+    {
+        SceneManager.LoadScene("XRoom");
+    }
+    public void onObsatclePress()
+    {
+        SceneManager.LoadScene("ObstacleCourse");
+    }
+    public void onDemoPress()
+    {
+        SceneManager.LoadScene("DemoRoom");
+    }
+    public void onLevelExitPress()
+    {
+        userMenu.SetActive(true);
+        levelMenu.SetActive(false);
     }
 }
