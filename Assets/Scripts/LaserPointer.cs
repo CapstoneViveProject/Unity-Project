@@ -17,6 +17,7 @@ public class LaserPointer : MonoBehaviour
     public Vector3 teleportReticleOffset;
     public LayerMask teleportMask;    
     private bool shouldTeleport;
+    private bool errorTeleport;
 
     private ControllerGrabObject cgo;
 
@@ -50,6 +51,16 @@ public class LaserPointer : MonoBehaviour
 
                 if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, teleportMask))
                 {
+                    if(hit.transform.gameObject.layer == 8)
+                    {
+                        shouldTeleport = true;
+                        errorTeleport = false;
+                    }
+                    else if(hit.transform.gameObject.layer == 9)
+                    {
+                        errorTeleport = true;
+                        shouldTeleport = false;
+                    }
                     hitPoint = hit.point;
 
                     ShowLaser(hit);
@@ -58,7 +69,7 @@ public class LaserPointer : MonoBehaviour
 
                     teleportReticleTransform.position = hitPoint + teleportReticleOffset;
 
-                    shouldTeleport = true;
+                    //shouldTeleport = true;
                 }
             }
             else
@@ -70,7 +81,13 @@ public class LaserPointer : MonoBehaviour
             if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && shouldTeleport)
             {
                 Teleport();
+                
             }
+            else if(Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && errorTeleport)
+            {
+                Debug.Log("ERROR TELEPORT!!!!!!!!!!");
+            }
+
         }
         
     }

@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     private SteamVR_TrackedObject trackedObj;
+    private SteamVR_TrackedObject controllerRight;
+    private SteamVR_TrackedObject controllerLeft;
 
     public GameObject leftController;
     public GameObject rightController;
@@ -18,6 +20,8 @@ public class Menu : MonoBehaviour
     public bool userMenuActive = false;
     public bool locomotionMenuActive = false;
 
+    public bool rightMenuActive = false;
+    public bool leftMenuActive = false;
     //public Button teleport;
     //public Button worldGrab;
     //public Button blink;
@@ -33,6 +37,8 @@ public class Menu : MonoBehaviour
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        controllerLeft = leftController.GetComponent<SteamVR_TrackedObject>();
+        controllerRight = rightController.GetComponent<SteamVR_TrackedObject>();
         userMenu.SetActive(false);
         locomotionMenu.SetActive(false);
         levelMenu.SetActive(false);
@@ -46,14 +52,22 @@ public class Menu : MonoBehaviour
     }
     void Update()
     {
-        if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        if(RightController.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            if (!userMenuActive && !locomotionMenuActive)
+            if(!rightMenuActive)
+            {
+                rightMenuActive = true;
+            }
+            else
+            {
+                rightMenuActive = false;
+            }
+            if ((rightMenuActive && !userMenuActive && !locomotionMenuActive) || (leftMenuActive && !userMenuActive && !locomotionMenuActive))
             {
                 userMenu.SetActive(true);
                 userMenuActive = true;
             }
-            else
+            else if (!rightMenuActive && !leftMenuActive)
             {
                 userMenu.SetActive(false);
                 locomotionMenu.SetActive(false);
@@ -61,10 +75,38 @@ public class Menu : MonoBehaviour
                 userMenuActive = false;
             }
         }
+        if (LeftController.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        {
+            if(!leftMenuActive)
+            {
+                leftMenuActive = true;
+            }
+            else
+            {
+                leftMenuActive = false;
+            }
+            if ((rightMenuActive && !userMenuActive && !locomotionMenuActive) || (leftMenuActive && !userMenuActive && !locomotionMenuActive))
+            {
+                userMenu.SetActive(true);
+                userMenuActive = true;
+            }
+            else if(!rightMenuActive && !leftMenuActive)
+            {
+                userMenu.SetActive(false);
+                locomotionMenu.SetActive(false);
+                levelMenu.SetActive(false);
+                userMenuActive = false;
+            }
+        }
+        
     }
-    private SteamVR_Controller.Device Controller
+    private SteamVR_Controller.Device LeftController
     {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
+        get { return SteamVR_Controller.Input((int)controllerLeft.index); }
+    }
+    private SteamVR_Controller.Device RightController
+    {
+        get { return SteamVR_Controller.Input((int)controllerRight.index); }
     }
     //public void LocomotionMenuToggle()
     //{

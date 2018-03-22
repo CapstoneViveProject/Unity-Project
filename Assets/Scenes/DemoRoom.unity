@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.066079, g: 0.09088018, b: 0.23117962, a: 1}
+  m_IndirectSpecularColor: {r: 0.06605516, g: 0.09086836, b: 0.23115131, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3192,7 +3192,7 @@ GameObject:
   - component: {fileID: 610979260}
   - component: {fileID: 610979259}
   - component: {fileID: 610979258}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4497,6 +4497,9 @@ MonoBehaviour:
   teleportReticleOffset: {x: 0, y: 0, z: 0}
   teleportMask:
     serializedVersion: 2
+    m_Bits: 768
+  trueTeleportMask:
+    serializedVersion: 2
     m_Bits: 256
 --- !u!114 &949089887
 MonoBehaviour:
@@ -4613,6 +4616,8 @@ MonoBehaviour:
   levelMenu: {fileID: 2133884921}
   userMenuActive: 0
   locomotionMenuActive: 0
+  rightMenuActive: 0
+  leftMenuActive: 0
 --- !u!114 &949089895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4668,7 +4673,7 @@ GameObject:
   - component: {fileID: 967896652}
   - component: {fileID: 967896651}
   - component: {fileID: 967896650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4826,7 +4831,7 @@ GameObject:
   - component: {fileID: 986412144}
   - component: {fileID: 986412143}
   - component: {fileID: 986412142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4924,7 +4929,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1025514192}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fc65878c7102524bb8c2bcfbefff497, type: 3}
   m_Name: 
@@ -4940,7 +4945,7 @@ MonoBehaviour:
     maxAllowedPerFrameDistanceDifference: 0.003
     smoothsRotation: 0
     maxAllowedPerFrameAngleDifference: 1.5
-  validCollisionColor: {r: 0, g: 1, b: 0, a: 1}
+  validCollisionColor: {r: 0, g: 0.25490198, b: 1, a: 1}
   invalidCollisionColor: {r: 1, g: 0, b: 0, a: 1}
   tracerVisibility: 0
   cursorVisibility: 0
@@ -4958,7 +4963,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1025514192}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
   m_Name: 
@@ -4967,7 +4972,7 @@ MonoBehaviour:
   targetListPolicy: {fileID: 0}
   pointerRenderer: {fileID: 1025514193}
   activationButton: 14
-  holdButtonToActivate: 1
+  holdButtonToActivate: 0
   activateOnEnable: 0
   activationDelay: 0
   selectionButton: 10
@@ -4985,7 +4990,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1025514192}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eba3cd5456cd79e49948f5ceb58544b4, type: 3}
   m_Name: 
@@ -5033,15 +5038,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1025514192}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activationButton: 14
-  activationMode: 0
+  activationMode: 1
   selectionButton: 3
-  clickMethod: 0
+  clickMethod: 1
   attemptClickOnDeactivate: 0
   clickAfterHoverDuration: 0
   controller: {fileID: 0}
@@ -6609,7 +6614,7 @@ GameObject:
   - component: {fileID: 1381648951}
   - component: {fileID: 1381648950}
   - component: {fileID: 1381648949}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6837,7 +6842,7 @@ MonoBehaviour:
   activationButton: 14
   activationMode: 1
   selectionButton: 3
-  clickMethod: 0
+  clickMethod: 1
   attemptClickOnDeactivate: 0
   clickAfterHoverDuration: 0
   controller: {fileID: 0}
