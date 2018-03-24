@@ -22,6 +22,8 @@ public class Menu : MonoBehaviour
 
     public bool rightMenuActive = false;
     public bool leftMenuActive = false;
+
+    public bool XRoomConsole = false;
     //public Button teleport;
     //public Button worldGrab;
     //public Button blink;
@@ -62,7 +64,7 @@ public class Menu : MonoBehaviour
             {
                 rightMenuActive = false;
             }
-            if ((rightMenuActive && !userMenuActive && !locomotionMenuActive) || (leftMenuActive && !userMenuActive && !locomotionMenuActive))
+            if ((rightMenuActive && !userMenuActive && !locomotionMenuActive && !XRoomConsole) || (leftMenuActive && !userMenuActive && !locomotionMenuActive && !XRoomConsole))
             {
                 userMenu.SetActive(true);
                 userMenuActive = true;
@@ -85,7 +87,7 @@ public class Menu : MonoBehaviour
             {
                 leftMenuActive = false;
             }
-            if ((rightMenuActive && !userMenuActive && !locomotionMenuActive) || (leftMenuActive && !userMenuActive && !locomotionMenuActive))
+            if ((rightMenuActive && !userMenuActive && !locomotionMenuActive && !XRoomConsole) || (leftMenuActive && !userMenuActive && !locomotionMenuActive && !XRoomConsole))
             {
                 userMenu.SetActive(true);
                 userMenuActive = true;

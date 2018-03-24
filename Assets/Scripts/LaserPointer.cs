@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LaserPointer : MonoBehaviour
 {
@@ -18,8 +19,10 @@ public class LaserPointer : MonoBehaviour
     public LayerMask teleportMask;    
     private bool shouldTeleport;
     private bool errorTeleport;
+    public GameObject Course;
 
     private ControllerGrabObject cgo;
+    private ObstacleCourseSetup OBS;
 
     private SteamVR_Controller.Device Controller
     {
@@ -30,6 +33,11 @@ public class LaserPointer : MonoBehaviour
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
         cgo = this.GetComponent<ControllerGrabObject>();
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "ObstacleCourse")
+        {
+            OBS = Course.GetComponent<ObstacleCourseSetup>();
+        }
     }
 
     void Start ()
@@ -86,6 +94,7 @@ public class LaserPointer : MonoBehaviour
             else if(Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && errorTeleport)
             {
                 Debug.Log("ERROR TELEPORT!!!!!!!!!!");
+                OBS.errors++;
             }
 
         }

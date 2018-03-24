@@ -237,12 +237,15 @@
     <Compile Include="Assets\_MK\MKGlowFree\MKGlowFree.cs" />
     <Compile Include="Assets\Scripts\ArmSwing.cs" />
     <Compile Include="Assets\Scripts\Blink.cs" />
+    <Compile Include="Assets\Scripts\ConsoleBehavior.cs" />
     <Compile Include="Assets\Scripts\ControllerGrabObject.cs" />
+    <Compile Include="Assets\Scripts\ErrorCount.cs" />
     <Compile Include="Assets\Scripts\ErrorWall.cs" />
     <Compile Include="Assets\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\MovingObstacle.cs" />
     <Compile Include="Assets\Scripts\ObstacleCourseSetup.cs" />
+    <Compile Include="Assets\Scripts\RotateTouser.cs" />
     <Compile Include="Assets\Scripts\Sliding.cs" />
     <Compile Include="Assets\Scripts\TransformFollow.cs" />
     <Compile Include="Assets\Scripts\ViveControllerInputTest.cs" />

@@ -10,8 +10,15 @@ public class ErrorWall : MonoBehaviour
     {
         OCS = GetComponentInParent<ObstacleCourseSetup>();
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        OCS.errors++;
+        if (collision.CompareTag("MainCamera"))
+        {
+            OCS.errors++;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        
     }
 }
