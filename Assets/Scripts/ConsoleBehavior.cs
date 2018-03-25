@@ -10,11 +10,21 @@ public class ConsoleBehavior : MonoBehaviour
     public Text Tens;
     public Text Ones;
     public GameObject controllerLeft;
+    public GameObject cameraRig;
     Menu menu;
+
+    public int consoleX;
+    public int consoleZ;
+
+    public int userX;
+    public int userZ;
+
+    float trueDistance;
     void Start ()
     {
         UpdateTotal();
         menu = controllerLeft.GetComponent<Menu>();
+        trueDistance = Vector3.Distance(cameraRig.transform.position, transform.position);
 	}
 
     private void OnTriggerEnter(Collider collision)
