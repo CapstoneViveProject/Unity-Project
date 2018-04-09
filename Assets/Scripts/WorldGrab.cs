@@ -55,7 +55,7 @@ public class WorldGrab : MonoBehaviour
                 {
                     Vector3 difference = previousTransform - rightController.position ;
                     difference.y = 0;
-                    difference *= 1.5f;
+                    difference *= 5f;
                     cameraRigTransform.position = cameraRigTransform.position + difference;
                     //previousTransform = rightController.position;
                     previousTransform = new Vector3(rightController.position.x, rightController.position.y, rightController.position.z);

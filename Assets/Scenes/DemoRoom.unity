@@ -1470,6 +1470,7 @@ MonoBehaviour:
   teleportMask:
     serializedVersion: 2
     m_Bits: 768
+  Course: {fileID: 0}
 --- !u!114 &301368951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,7 +1654,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 301368947}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

@@ -35,7 +35,7 @@ public class Blink : MonoBehaviour
                 Debug.Log(axis);
                 Vector3 difference = cameraRigTransform.position - headTransform.position;
                 difference.y = 0;
-                cameraRigTransform.position += axis/3;
+                cameraRigTransform.position += axis;
             }
         }
     }
