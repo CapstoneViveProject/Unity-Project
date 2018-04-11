@@ -241,6 +241,7 @@
     <Compile Include="Assets\Scripts\ControllerGrabObject.cs" />
     <Compile Include="Assets\Scripts\ErrorCount.cs" />
     <Compile Include="Assets\Scripts\ErrorWall.cs" />
+    <Compile Include="Assets\Scripts\FileWriter.cs" />
     <Compile Include="Assets\Scripts\FinishLIne.cs" />
     <Compile Include="Assets\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />

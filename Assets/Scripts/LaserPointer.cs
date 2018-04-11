@@ -57,7 +57,7 @@ public class LaserPointer : MonoBehaviour
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, teleportMask))
+                if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 20, teleportMask))
                 {
                     if(hit.transform.gameObject.layer == 8)
                     {

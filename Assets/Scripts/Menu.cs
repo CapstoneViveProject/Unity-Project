@@ -141,27 +141,37 @@ public class Menu : MonoBehaviour
     {
         cGOL.locomotionSetting = 0;
         cGOR.locomotionSetting = 0;
+        userMenu.SetActive(true);
+        locomotionMenu.SetActive(false);
     }
     public void onWorldGrabPress()
     {
         cGOL.locomotionSetting = 4;
         cGOR.locomotionSetting = 4;
         Debug.Log("World Grab Press");
+        userMenu.SetActive(true);
+        locomotionMenu.SetActive(false);
     }
     public void onBlinkPress()
     {
         cGOL.locomotionSetting = 1;
         cGOR.locomotionSetting = 1;
+        userMenu.SetActive(true);
+        locomotionMenu.SetActive(false);
     }
     public void onArmSwingPress()
     {
         cGOL.locomotionSetting = 3;
         cGOR.locomotionSetting = 3;
+        userMenu.SetActive(true);
+        locomotionMenu.SetActive(false);
     }
     public void onSlidePress()
     {
         cGOL.locomotionSetting = 2;
         cGOR.locomotionSetting = 2;
+        userMenu.SetActive(true);
+        locomotionMenu.SetActive(false);
     }
     public void onLocoExitPress()
     {
