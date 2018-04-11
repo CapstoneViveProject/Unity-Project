@@ -19,12 +19,15 @@ public class ConsoleBehavior : MonoBehaviour
     public int userX;
     public int userZ;
 
+
+
     float trueDistance;
     void Start ()
     {
         UpdateTotal();
         menu = controllerLeft.GetComponent<Menu>();
         trueDistance = Vector3.Distance(cameraRig.transform.position, transform.position);
+        
 	}
 
     private void OnTriggerEnter(Collider collision)
@@ -66,6 +69,12 @@ public class ConsoleBehavior : MonoBehaviour
     public void SubmitPress()
     {
         //return distanceEntered;
+        FileWriter w = new FileWriter("filename.txt");
+        w.write("XRoom");
+        w.write("Locomotion: " + controllerLeft.GetComponent<ControllerGrabObject>().locomotionSetting);
+        w.write("Submited Distance: " + distanceEntered);
+        w.write("Actual Distance: " + trueDistance);
+
     }
     void UpdateTotal()
     {

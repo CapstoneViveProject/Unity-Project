@@ -14,6 +14,7 @@ public class FinishLIne : MonoBehaviour
         if (other.tag == "MainCamera")
         {
             OCS.finishLine = true;
+            
         }
     }
 
